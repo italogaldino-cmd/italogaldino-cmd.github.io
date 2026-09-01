@@ -1,691 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Ítalo Galdino | SQL • Oracle • Dados</title>
-
-    <meta name="description"
-          content="Portfólio de Ítalo Galdino — SQL, Oracle, PL/SQL, análise de dados e automação.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b0f14;
-            color: #e6edf3;
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* NAVBAR */
-
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(11, 15, 20, 0.90);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #21262d;
-        }
-
-        nav {
-            max-width: 1100px;
-            margin: auto;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .logo span {
-            color: #58a6ff;
-        }
-
-        .menu {
-            display: flex;
-            gap: 28px;
-            list-style: none;
-        }
-
-        .menu a {
-            color: #8b949e;
-            transition: 0.3s;
-        }
-
-        .menu a:hover {
-            color: #58a6ff;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 100vh;
-            max-width: 1100px;
-            margin: auto;
-            padding: 160px 20px 80px;
-
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            max-width: 750px;
-        }
-
-        .tag {
-            color: #58a6ff;
-            font-weight: bold;
-            margin-bottom: 15px;
-            font-size: 15px;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 7vw, 75px);
-            line-height: 1.05;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            color: #58a6ff;
-        }
-
-        .hero p {
-            color: #8b949e;
-            font-size: 19px;
-            max-width: 680px;
-            margin-bottom: 35px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 12px 22px;
-            border-radius: 7px;
-            border: 1px solid #30363d;
-            transition: 0.3s;
-            font-weight: bold;
-        }
-
-        .btn-primary {
-            background: #238636;
-            border-color: #238636;
-        }
-
-        .btn-primary:hover {
-            background: #2ea043;
-        }
-
-        .btn-secondary:hover {
-            border-color: #58a6ff;
-            color: #58a6ff;
-        }
-
-        /* SECTIONS */
-
-        section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 100px 20px;
-        }
-
-        .section-title {
-            font-size: 34px;
-            margin-bottom: 15px;
-        }
-
-        .section-subtitle {
-            color: #8b949e;
-            margin-bottom: 45px;
-        }
-
-        /* SOBRE */
-
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .about p {
-            color: #8b949e;
-            margin-bottom: 15px;
-        }
-
-        .about-highlight {
-            border: 1px solid #30363d;
-            background: #11161d;
-            padding: 30px;
-            border-radius: 10px;
-        }
-
-        .about-highlight h3 {
-            margin-bottom: 20px;
-        }
-
-        .about-highlight ul {
-            list-style: none;
-        }
-
-        .about-highlight li {
-            margin-bottom: 12px;
-            color: #8b949e;
-        }
-
-        .about-highlight li::before {
-            content: "▹";
-            color: #58a6ff;
-            margin-right: 10px;
-        }
-
-        /* TECNOLOGIAS */
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .skill {
-            padding: 25px;
-            background: #11161d;
-            border: 1px solid #30363d;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .skill:hover {
-            transform: translateY(-5px);
-            border-color: #58a6ff;
-        }
-
-        .skill h3 {
-            margin-bottom: 10px;
-        }
-
-        .skill p {
-            color: #8b949e;
-            font-size: 14px;
-        }
-
-        /* PROJETOS */
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .project {
-            background: #11161d;
-            border: 1px solid #30363d;
-            border-radius: 10px;
-            padding: 30px;
-            transition: 0.3s;
-        }
-
-        .project:hover {
-            transform: translateY(-5px);
-            border-color: #58a6ff;
-        }
-
-        .project-icon {
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-
-        .project h3 {
-            margin-bottom: 10px;
-        }
-
-        .project p {
-            color: #8b949e;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .tags span {
-            background: #21262d;
-            color: #58a6ff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-        }
-
-        /* CONTATO */
-
-        .contact {
-            text-align: center;
-        }
-
-        .contact p {
-            color: #8b949e;
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid #21262d;
-            text-align: center;
-            padding: 30px 20px;
-            color: #6e7681;
-            font-size: 14px;
-        }
-
-        /* RESPONSIVO */
-
-        @media (max-width: 800px) {
-
-            .menu {
-                display: none;
-            }
-
-            .about {
-                grid-template-columns: 1fr;
-            }
-
-            .skills {
-                grid-template-columns: 1fr;
-            }
-
-            .projects {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding-top: 130px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Ítalo Galdino — soluções empresariais com SQL, Oracle, dados e automação.">
+  <meta name="theme-color" content="#080b12">
+  <meta property="og:title" content="Ítalo Galdino | Dados & Automação">
+  <meta property="og:description" content="Soluções empresariais com SQL, Oracle, dados e automação.">
+  <meta property="og:type" content="website">
+  <title>Ítalo Galdino | Dados & Automação</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <!-- MENU -->
-
-    <header>
-        <nav>
-
-            <div class="logo">
-                Ítalo<span>.dev</span>
-            </div>
-
-            <ul class="menu">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#tecnologias">Tecnologias</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-
-        </nav>
-    </header>
-
-
-    <!-- HERO -->
-
-    <main>
-
-        <section class="hero">
-
-            <div class="hero-content">
-
-                <div class="tag">
-                    SQL • ORACLE • DADOS • AUTOMAÇÃO
-                </div>
-
-                <h1>
-                    Olá, eu sou<br>
-                    <span>Ítalo Galdino.</span>
-                </h1>
-
-                <p>
-                    Desenvolvedor de soluções em TI com foco em
-                    bancos de dados, SQL, Oracle, análise de dados
-                    e automação de processos empresariais.
-                </p>
-
-                <div class="buttons">
-
-                    <a href="#projetos" class="btn btn-primary">
-                        Ver meus projetos
-                    </a>
-
-                    <a href="https://github.com/italogaldino-cmd"
-                       target="_blank"
-                       class="btn btn-secondary">
-                        GitHub
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- SOBRE -->
-
-        <section id="sobre">
-
-            <h2 class="section-title">
-                Sobre mim
-            </h2>
-
-            <p class="section-subtitle">
-                Um pouco sobre minha experiência e área de atuação.
-            </p>
-
-            <div class="about">
-
-                <div>
-
-                    <p>
-                        Sou profissional de Tecnologia da Informação
-                        com experiência no desenvolvimento de soluções
-                        utilizando SQL e Oracle.
-                    </p>
-
-                    <p>
-                        Meu foco está na criação de consultas,
-                        relatórios, análises e automações que ajudam
-                        empresas a transformar dados em informações
-                        úteis para tomada de decisão.
-                    </p>
-
-                    <p>
-                        Também possuo interesse em desenvolvimento,
-                        automação e integração entre sistemas.
-                    </p>
-
-                </div>
-
-                <div class="about-highlight">
-
-                    <h3>🎯 Área de atuação</h3>
-
-                    <ul>
-                        <li>Desenvolvimento SQL</li>
-                        <li>Oracle e PL/SQL</li>
-                        <li>Relatórios gerenciais</li>
-                        <li>Análise de dados</li>
-                        <li>Automação de processos</li>
-                        <li>Integração de sistemas</li>
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- TECNOLOGIAS -->
-
-        <section id="tecnologias">
-
-            <h2 class="section-title">
-                Tecnologias
-            </h2>
-
-            <p class="section-subtitle">
-                Ferramentas e tecnologias com as quais trabalho.
-            </p>
-
-            <div class="skills">
-
-                <div class="skill">
-                    <h3>🗄️ SQL & Oracle</h3>
-                    <p>
-                        Consultas complexas, relacionamentos,
-                        subqueries, agregações, views e análise
-                        de grandes volumes de dados.
-                    </p>
-                </div>
-
-                <div class="skill">
-                    <h3>⚙️ PL/SQL</h3>
-                    <p>
-                        Procedures, functions, packages,
-                        automações e rotinas para banco de dados.
-                    </p>
-                </div>
-
-                <div class="skill">
-                    <h3>📊 Power BI</h3>
-                    <p>
-                        Criação de indicadores, dashboards e
-                        visualização de informações empresariais.
-                    </p>
-                </div>
-
-                <div class="skill">
-                    <h3>🐍 Python</h3>
-                    <p>
-                        Automação de processos, tratamento de dados
-                        e integração com sistemas.
-                    </p>
-                </div>
-
-                <div class="skill">
-                    <h3>🌐 JavaScript</h3>
-                    <p>
-                        Desenvolvimento web, automações e
-                        integração entre aplicações.
-                    </p>
-                </div>
-
-                <div class="skill">
-                    <h3>🏢 Sistemas ERP</h3>
-                    <p>
-                        Experiência com processos empresariais,
-                        ERP, WMS e análise de dados operacionais.
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PROJETOS -->
-
-        <section id="projetos">
-
-            <h2 class="section-title">
-                Projetos
-            </h2>
-
-            <p class="section-subtitle">
-                Alguns exemplos de soluções que desenvolvo.
-            </p>
-
-            <div class="projects">
-
-
-                <div class="project">
-
-                    <div class="project-icon">📊</div>
-
-                    <h3>
-                        Análise de Descontos
-                    </h3>
-
-                    <p>
-                        Relatório para análise de descontos
-                        aplicados em duplicatas, permitindo
-                        identificar valores, percentuais e
-                        médias de desconto.
-                    </p>
-
-                    <div class="tags">
-                        <span>Oracle</span>
-                        <span>SQL</span>
-                        <span>Relatórios</span>
-                    </div>
-
-                </div>
-
-
-                <div class="project">
-
-                    <div class="project-icon">📦</div>
-
-                    <h3>
-                        Análise de Estoque
-                    </h3>
-
-                    <p>
-                        Consultas para análise de estoque,
-                        reservas, movimentações e disponibilidade
-                        de produtos.
-                    </p>
-
-                    <div class="tags">
-                        <span>Oracle</span>
-                        <span>SQL</span>
-                        <span>ERP</span>
-                    </div>
-
-                </div>
-
-
-                <div class="project">
-
-                    <div class="project-icon">🧾</div>
-
-                    <h3>
-                        Automação de Conferência de NF-e
-                    </h3>
-
-                    <p>
-                        Projeto de automação para validação de
-                        informações fiscais, cruzamento de dados
-                        e identificação de divergências.
-                    </p>
-
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>Oracle</span>
-                        <span>SQL</span>
-                    </div>
-
-                </div>
-
-
-                <div class="project">
-
-                    <div class="project-icon">📈</div>
-
-                    <h3>
-                        Relatórios Gerenciais
-                    </h3>
-
-                    <p>
-                        Desenvolvimento de consultas e relatórios
-                        para transformar dados operacionais em
-                        informações para análise.
-                    </p>
-
-                    <div class="tags">
-                        <span>SQL</span>
-                        <span>Oracle</span>
-                        <span>Power BI</span>
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- CONTATO -->
-
-        <section id="contato" class="contact">
-
-            <h2 class="section-title">
-                Vamos conversar?
-            </h2>
-
-            <p>
-                Estou aberto a oportunidades, projetos e
-                desafios relacionados a tecnologia, dados,
-                SQL e automação.
-            </p>
-
-            <div class="contact-links">
-
-                <a
-                    href="https://github.com/italogaldino-cmd"
-                    target="_blank"
-                    class="btn btn-secondary">
-                    GitHub
-                </a>
-
-                <a
-                    href="#"
-                    class="btn btn-secondary">
-                    LinkedIn
-                </a>
-
-                <a
-                    href="mailto:seuemail@email.com"
-                    class="btn btn-primary">
-                    E-mail
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        © 2026 Ítalo Galdino • Desenvolvedor SQL & Soluções em TI
-
-    </footer>
-
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Início">IG<span>.</span></a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a><a href="#tecnologias">Stack</a><a href="#projetos">Cases</a><a href="#experiencia">Experiência</a>
+    </nav>
+    <a class="nav-contact" href="#contato">Vamos conversar <span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero section" id="inicio">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><i></i> Disponível para novos desafios</p>
+        <h1>Dados que viram<br><em>decisão.</em></h1>
+        <p class="hero-text">Desenvolvo soluções empresariais com <strong>SQL, Oracle e automação</strong> para transformar processos complexos em informação clara, confiável e acionável.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#projetos">Ver projetos <span>↓</span></a><a class="button button-ghost" href="#contato">Entrar em contato</a></div>
+      </div>
+      <div class="terminal-wrap reveal delay-1" aria-label="Exemplo de código SQL">
+        <div class="terminal">
+          <div class="terminal-bar"><span></span><span></span><span></span><p>analytics.sql</p></div>
+          <pre><code><b>SELECT</b>
+  insights, performance
+<b>FROM</b> business_data
+<b>WHERE</b> strategy = <mark>'data-driven'</mark>
+  <b>AND</b> impact <mark>&gt; 0</mark>;
+
+<span class="output">→ resultados que movem negócios</span><span class="cursor">_</span></code></pre>
+        </div>
+        <div class="terminal-glow"></div>
+        <div class="stat-card"><strong>01</strong><span>dados<br>estratégicos</span></div>
+      </div>
+      <a class="scroll-label" href="#sobre">role para explorar <span></span></a>
+    </section>
+
+    <section class="intro section" id="sobre">
+      <p class="section-label reveal">01 / SOBRE MIM</p>
+      <div class="intro-grid">
+        <h2 class="reveal">Tecnologia com<br>propósito <em>real.</em></h2>
+        <div class="intro-copy reveal delay-1"><p>Atuo na interseção entre dados, processos e negócio. Meu foco é criar ferramentas que reduzem tarefas manuais, ampliam a visibilidade operacional e ajudam equipes a tomar decisões melhores.</p><p>Da consulta SQL ao dashboard executivo, da rotina de banco à automação: penso na solução completa e no impacto que ela gera.</p></div>
+      </div>
+      <div class="principles">
+        <article class="reveal"><span>01</span><h3>Clareza</h3><p>Informação útil, acessível e na hora certa.</p></article>
+        <article class="reveal delay-1"><span>02</span><h3>Eficiência</h3><p>Menos retrabalho. Mais tempo para o que importa.</p></article>
+        <article class="reveal delay-2"><span>03</span><h3>Impacto</h3><p>Tecnologia conectada às metas do negócio.</p></article>
+      </div>
+    </section>
+
+    <section class="stack section" id="tecnologias">
+      <div class="section-heading reveal"><p class="section-label">02 / ESPECIALIDADES</p><h2>Minha caixa<br>de <em>ferramentas.</em></h2></div>
+      <div class="stack-grid">
+        <article class="stack-featured reveal"><div class="icon icon-database">▱</div><p>Banco de dados</p><h3>Oracle<br>& SQL</h3><span>Modelagem, consultas, performance e integridade.</span></article>
+        <article class="skill-card reveal delay-1"><span class="skill-number">01</span><h3>PL/SQL</h3><p>Procedures, packages, triggers e regras de negócio.</p></article>
+        <article class="skill-card reveal delay-2"><span class="skill-number">02</span><h3>Power BI</h3><p>Dashboards que contam a história por trás dos números.</p></article>
+        <article class="skill-card reveal delay-1"><span class="skill-number">03</span><h3>Python</h3><p>Integrações, tratamento de dados e automação de rotinas.</p></article>
+        <article class="skill-card reveal delay-2"><span class="skill-number">04</span><h3>JavaScript</h3><p>Interfaces úteis para levar dados a quem precisa deles.</p></article>
+      </div>
+      <div class="marquee" aria-label="Tecnologias"><div>SQL <b>✦</b> ORACLE <b>✦</b> PL/SQL <b>✦</b> POWER BI <b>✦</b> PYTHON <b>✦</b> JAVASCRIPT <b>✦</b> SQL <b>✦</b> ORACLE <b>✦</b> PL/SQL <b>✦</b> POWER BI <b>✦</b> PYTHON <b>✦</b> JAVASCRIPT <b>✦</b></div></div>
+    </section>
+
+    <section class="projects section" id="projetos">
+      <div class="section-heading reveal"><p class="section-label">03 / PROJETOS SELECIONADOS</p><h2>Soluções que<br>geram <em>valor.</em></h2><p class="heading-side">Cases demonstrativos de desafios que resolvo com dados, automação e visão de negócio.</p></div>
+      <div class="project-list">
+        <article class="project reveal"><div class="project-index">01</div><div class="project-visual discount"><div class="mini-chart"><span style="height:30%"></span><span style="height:56%"></span><span style="height:43%"></span><span style="height:79%"></span><span style="height:62%"></span><span style="height:91%"></span></div><b>−18.4%</b></div><div class="project-info"><p>ANÁLISE COMERCIAL</p><h3>Inteligência de descontos</h3><span>SQL · Oracle · Power BI</span></div><a href="#contato" aria-label="Conversar sobre Inteligência de descontos">↗</a></article>
+        <article class="project reveal"><div class="project-index">02</div><div class="project-visual inventory"><div class="warehouse"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>98.2%</b></div><div class="project-info"><p>OPERAÇÃO & ESTOQUE</p><h3>Visão inteligente de estoque</h3><span>SQL · WMS · Power BI</span></div><a href="#contato" aria-label="Conversar sobre Visão inteligente de estoque">↗</a></article>
+        <article class="project reveal"><div class="project-index">03</div><div class="project-visual automation"><div class="automation-path"><i></i><i></i><i></i></div><b>24h</b></div><div class="project-info"><p>AUTOMAÇÃO DE PROCESSOS</p><h3>Fluxos empresariais automatizados</h3><span>Python · APIs · JavaScript</span></div><a href="#contato" aria-label="Conversar sobre Fluxos empresariais automatizados">↗</a></article>
+      </div>
+    </section>
+
+    <section class="experience section" id="experiencia">
+      <p class="section-label reveal">04 / EXPERIÊNCIA</p>
+      <div class="experience-grid"><h2 class="reveal">Construindo<br>o <em>próximo</em><br>resultado.</h2><div class="timeline reveal delay-1"><article><span class="timeline-dot"></span><p>ATUAL</p><h3>Dados, automação e soluções empresariais</h3><div>Desenvolvimento de análises, relatórios e ferramentas para dar escala à operação.</div></article><article><span class="timeline-dot"></span><p>FOCO CONTÍNUO</p><h3>Oracle, SQL e processos de negócio</h3><div>Especialização técnica orientada a confiabilidade, performance e resultado.</div></article></div></div>
+    </section>
+
+    <section class="contact section" id="contato">
+      <p class="section-label reveal">05 / CONTATO</p>
+      <div class="contact-content reveal"><p class="contact-pre">Tem um desafio de dados ou automação?</p><h2>Vamos criar algo<br><em>relevante.</em></h2><a class="email-placeholder" href="#" aria-label="Adicione seu e-mail aqui">seu-email@exemplo.com <span>↗</span></a><p class="placeholder-note">Substitua este e-mail pelo seu contato profissional antes de publicar.</p></div>
+      <div class="contact-links reveal"><a href="#" aria-label="Adicione seu LinkedIn aqui">LinkedIn <span>↗</span></a><a href="https://github.com/italogaldino-cmd" target="_blank" rel="noopener">GitHub <span>↗</span></a></div>
+    </section>
+  </main>
+  <footer><a class="brand" href="#inicio">IG<span>.</span></a><p>© <span id="year"></span> Ítalo Galdino. Feito com propósito.</p><a href="#inicio">Voltar ao topo ↑</a></footer>
+  <script src="script.js"></script>
 </body>
 </html>
