@@ -36,19 +36,20 @@
         <p class="hero-text"><strong>Especialista em SQL, Oracle e ERP WinThor (PC Sistemas).</strong> Desenvolvo soluções empresariais que transformam processos complexos em informação clara, confiável e acionável.</p>
         <div class="hero-actions"><a class="button button-primary" href="#projetos">Ver projetos <span>↓</span></a><a class="button button-ghost" href="#contato">Entrar em contato</a></div>
       </div>
-      <div class="terminal-wrap reveal delay-1" aria-label="Exemplo de código SQL">
+      <div class="terminal-wrap reveal delay-1" aria-label="Relatórios SQL desenvolvidos por Ítalo Galdino, exibidos automaticamente">
         <div class="terminal">
-          <div class="terminal-bar"><span></span><span></span><span></span><p>analytics.sql</p></div>
-          <pre><code><b>SELECT</b>
-  insights, performance
-<b>FROM</b> business_data
-<b>WHERE</b> strategy = <mark>'data-driven'</mark>
-  <b>AND</b> impact <mark>&gt; 0</mark>;
+          <div class="terminal-bar"><span></span><span></span><span></span><p id="terminal-file">relatorios-sql.sql</p></div>
+          <pre><code id="terminal-code" aria-live="polite"><span class="output">-- relatórios SQL desenvolvidos</span>
 
-<span class="output">→ resultados que movem negócios</span><span class="cursor">_</span></code></pre>
+<b>SELECT</b>
+  projetos_reais
+<b>FROM</b> portfolio
+<b>WHERE</b> tecnologia = <mark>'Oracle SQL'</mark>;
+
+<span class="output">→ 61 relatórios disponíveis</span><span class="cursor">_</span></code></pre>
         </div>
         <div class="terminal-glow"></div>
-        <div class="stat-card"><strong>01</strong><span>dados<br>estratégicos</span></div>
+        <div class="stat-card"><strong id="report-count">01</strong><span>relatórios<br>SQL reais</span></div>
       </div>
       <a class="scroll-label" href="#sobre">role para explorar <span></span></a>
     </section>
