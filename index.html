@@ -11,6 +11,7 @@
   <title>Ítalo Galdino | Dados & Automação</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reports.css">
   <style>
     .scroll-label { bottom: .8rem; letter-spacing: .18em; }
     .scroll-label span { width: 72px; }
@@ -38,15 +39,8 @@
       </div>
       <div class="terminal-wrap reveal delay-1" aria-label="Relatórios SQL desenvolvidos por Ítalo Galdino, exibidos automaticamente">
         <div class="terminal">
-          <div class="terminal-bar"><span></span><span></span><span></span><p id="terminal-file">relatorios-sql.sql</p></div>
-          <pre><code id="terminal-code" aria-live="polite"><span class="output">-- relatórios SQL desenvolvidos</span>
-
-<b>SELECT</b>
-  projetos_reais
-<b>FROM</b> portfolio
-<b>WHERE</b> tecnologia = <mark>'Oracle SQL'</mark>;
-
-<span class="output">→ 61 relatórios disponíveis</span><span class="cursor">_</span></code></pre>
+          <div class="terminal-bar"><span></span><span></span><span></span><p id="terminal-file">relatorios</p></div>
+          <pre><code id="terminal-code" aria-live="polite">8596 - COMPRAS FORNECEDOR</code></pre>
         </div>
         <div class="terminal-glow"></div>
         <div class="stat-card"><strong id="report-count">01</strong><span>relatórios<br>SQL reais</span></div>
@@ -99,13 +93,10 @@
     </section>
 
     <section class="projects section" id="projetos">
-      <div class="section-heading reveal"><p class="section-label">03 / PROJETOS SELECIONADOS</p><h2>Soluções que<br>geram <em>valor.</em></h2><p class="heading-side">Cases baseados em rotinas reais de dados, estoque, logística e operação empresarial.</p></div>
-      <div class="project-list">
-        <article class="project reveal"><div class="project-index">01</div><div class="project-visual discount"><div class="mini-chart"><span style="height:30%"></span><span style="height:56%"></span><span style="height:43%"></span><span style="height:79%"></span><span style="height:62%"></span><span style="height:91%"></span></div><b>SQL</b></div><div class="project-info"><p>COMPRAS & FORNECEDORES</p><h3>Análise de compras e precificação</h3><span>Oracle SQL · Estoque · Custos</span></div><a href="#contato" aria-label="Conversar sobre Análise de compras e precificação">↗</a></article>
-        <article class="project reveal"><div class="project-index">02</div><div class="project-visual inventory"><div class="warehouse"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>WMS</b></div><div class="project-info"><p>LOGÍSTICA & OPERAÇÃO</p><h3>Acompanhamento de cargas WMS</h3><span>Oracle SQL · Separação · Conferência</span></div><a href="#contato" aria-label="Conversar sobre Acompanhamento de cargas WMS">↗</a></article>
-        <article class="project reveal"><div class="project-index">03</div><div class="project-visual automation"><div class="automation-path"><i></i><i></i><i></i></div><b>ABC</b></div><div class="project-info"><p>ESTOQUE & ARMAZENAGEM</p><h3>Curva ABC de estoque WMS</h3><span>Oracle SQL · Endereçamento · Inventário</span></div><a href="#contato" aria-label="Conversar sobre Curva ABC de estoque WMS">↗</a></article>
-        <article class="project reveal"><div class="project-index">04</div><div class="project-visual discount"><div class="mini-chart"><span style="height:43%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:84%"></span><span style="height:63%"></span><span style="height:48%"></span></div><b>SAC</b></div><div class="project-info"><p>ATENDIMENTO & CONTROLE</p><h3>Relatório de SAC e devoluções</h3><span>Oracle SQL · Notas fiscais · Indicadores</span></div><a href="#contato" aria-label="Conversar sobre Relatório de SAC e devoluções">↗</a></article>
-      </div>
+      <div class="section-heading reveal"><p class="section-label">03 / RELATÓRIOS SQL</p><h2>Relatórios de<br><em>rotinas reais.</em></h2><p class="heading-side">Uma seleção de relatórios desenvolvidos para a operação empresarial.</p></div>
+      <ul class="sql-report-list" aria-label="Relatórios SQL desenvolvidos">
+        <li class="reveal">8011 - ANÁLISE DE CARTEIRA DE CLIENTES</li><li class="reveal">8012 - ANÁLISE DE TÍTULOS VENDOR</li><li class="reveal">8593 - FILIPE NFS TRATATIVA</li><li class="reveal">8596 - COMPRAS FORNECEDOR</li><li class="reveal">8597 - BÔNUS STO WMS</li><li class="reveal">8600 - PRODUTO - PREÇO (COMPRAS)</li><li class="reveal">8601 - EVENTOS WMS - CARREGAMENTO</li><li class="reveal">8602 - ENDEREÇAMENTO - FILIAL</li><li class="reveal">8603 - EVENTOS AJUSTE ESTOQUE - WMS</li><li class="reveal">8604 - ABASTECIMENTO O.S. EVENTOS - WMS</li><li class="reveal">8605 - RELATÓRIO INFORMAÇÕES SAC</li><li class="reveal">8606 - ACOMPANHAMENTO DE CARGAS STO</li><li class="reveal">8607 - ANÁLISE DE DEMANDAS CDE</li><li class="reveal">8608 - ANÁLISE DE EXTRATO DE PRODUTOS</li><li class="reveal">8609 - CALENDÁRIO DE COMPRAS</li><li class="reveal">8613 - CONSULTA DE ESTOQUE</li><li class="reveal">8613 - CONSULTA DE ESTOQUE 2</li><li class="reveal">8614 - CONFERÊNCIA DE BÔNUS</li><li class="reveal">8615 - AUDITORIA DE DEMANDAS</li><li class="reveal">8616 - DEVOLUÇÃO POR GERENTE-FILIAL</li><li class="reveal">8618 - ESTOQUE STO - PREÇO</li><li class="reveal">8619 - ENTRADA DE MERCADORIA</li><li class="reveal">8622 - LOCK DE DEMANDAS</li><li class="reveal">8623 - ESTOQUE ABC WMS</li><li class="reveal">8624 - SALDO AJUSTE DE ESTOQUE</li><li class="reveal">8626 - DESCARGA PIX E CARTÃO</li><li class="reveal">8627 - ANÁLISE DE DEVOLUÇÕES</li><li class="reveal">8629 - ACOMPANHAMENTO DE DEVOLUÇÃO A FORNEC.</li><li class="reveal">8630 - ANÁLISE DE OCORRÊNCIAS RF</li><li class="reveal">8631 - FINANCEIRO PIX AVULSO</li><li class="reveal">8632 - LOG REAPROVEITAMENTO DE AVARIA</li><li class="reveal">8633 - CONTROLE DE ENTRADA DE NF</li>
+      </ul>
     </section>
 
     <section class="experience section" id="experiencia">
