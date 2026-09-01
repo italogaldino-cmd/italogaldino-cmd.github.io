@@ -1,4 +1,4 @@
-# projects
+# Portfólio — Ítalo Galdino
 Portfólio — publicação no GitHub Pages
 
 1. Abra o repositório `italogaldino-cmd.github.io` no GitHub.
